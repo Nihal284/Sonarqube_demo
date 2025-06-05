@@ -7,9 +7,7 @@ on:
 
 jobs:
   sonarqube:
-    name: SonarQube Analysis
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -18,6 +16,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
